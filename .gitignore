@@ -1,3 +1,7 @@
+# Database Files and misc
+test.py
+server.sqlite3
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

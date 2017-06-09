@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{% include "html_head.html" %}
+	</head>
+	<body>
+		{% include "header.html" %}
+		<h2>Edit</h2>
+
+		{% if not secret_hmac %}
+		<p>You are not currently logged in.</p>
+		{% else %}
+
+		{% if error %}
+		<h3>Error: {{ error }}</h3>
+		{% endif %}
+
+		<p>Current value: {{ secret_data }}
+		<form action="/edit" method="POST">
+			<input type="radio" name="secret_data" value="blue"{% if secret_data == 'blue' %} checked{% endif %}>Blue<br>
+			<input type="radio" name="secret_data" value="yellow"{% if secret_data == 'yellow' %} checked{% endif %}>Yellow<br>
+			<input type="radio" name="secret_data" value="red"{% if secret_data == 'red' %} checked{% endif %}>Red<br>
+			<input type="radio" name="secret_data" value="green"{% if secret_data == 'green' %} checked{% endif %}>Green<br>
+			<input type="submit">
+		</form>
+		{% endif %}
+	</body>
+</html>

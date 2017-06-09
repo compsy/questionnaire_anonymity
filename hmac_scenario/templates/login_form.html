@@ -6,7 +6,7 @@
 	<body>
 		{% include "header.html" %}
 		<h2>Login</h2>
-		{% if error is defined %}
+		{% if error %}
 		<h3>Error: {{ error }}</h3>
 		{% endif %}
 		<form action="/login" method="POST">

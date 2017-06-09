@@ -6,10 +6,10 @@
 	<body>
 		{% include "header.html" %}
 		<h2>Show</h2>
-		{% if hmac is none %}
+		{% if not secret_hmac %}
 		<p>You are not currently logged in.</p>
 		{% else %}
-		<p>Welcome user "{{ username }}", your secret HMAC is "{{ hmac }}".</p>
+		<p>Welcome user "{{ username }}", your secret HMAC is "{{ secret_hmac }}".</p>
 		{% endif %}
 	</body>
 </html>
