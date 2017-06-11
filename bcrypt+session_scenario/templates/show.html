@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{% include "html_head.html" %}
+	</head>
+	<body>
+		{% include "header.html" %}
+		<h2>Show</h2>
+		{% if not secret_key %}
+		<p>You are not currently logged in.</p>
+		{% else %}
+		<p>Welcome user "{{ username }}" with sid "{{ sid }}", your secret key is "{{ secret_key }}".</p>
+		{% endif %}
+	</body>
+</html>
